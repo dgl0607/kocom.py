@@ -18,11 +18,11 @@
     "share:rw"
   ],
   "options": {
-    "share/kocom2/kocom2.conf 설정파일": true,
-    "share/kocom2/kocom2.py 실행파일": true
+    "share/kocom2/kocom.conf 설정파일": true,
+    "share/kocom2/kocom.py 실행파일": true
   },
   "schema": {
-    "share/kocom2/kocom2.conf 설정파일": "bool",
-    "share/kocom2/kocom2.py 실행파일": "bool"
+    "share/kocom2/kocom.conf 설정파일": "bool",
+    "share/kocom2/kocom.py 실행파일": "bool"
   }
 }

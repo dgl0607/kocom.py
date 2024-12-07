@@ -6,7 +6,7 @@ mkdir -p $SHARE_DIR
 if [ ! -f $SHARE_DIR/kocom.conf ]; then
 	mv /kocom.conf $SHARE_DIR
 fi
-if [ ! -f $SHARE_DIR/kocom2.py ]; then
+if [ ! -f $SHARE_DIR/kocom.py ]; then
 	mv /kocom.py $SHARE_DIR
 fi
 

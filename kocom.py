@@ -25,7 +25,7 @@ import configparser
 
 # define -------------------------------
 SW_VERSION = '2022.04.10'
-CONFIG_FILE = 'kocom2.conf'
+CONFIG_FILE = 'kocom.conf'
 BUF_SIZE = 100
 
 read_write_gap = 0.03  # minimal time interval between last read to write

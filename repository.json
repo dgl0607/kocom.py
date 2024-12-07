@@ -1,5 +1,5 @@
 {
-	"name": "Home Assistant Add-on: Kocom LDG",
-	"url": "https://github.com/ldg0607/kocom.py",
-	"maintainer": "LDG"
+	"name": "Home Assistant Add-on: Kocom DGL",
+	"url": "https://github.com/dgl0607/kocom.py",
+	"maintainer": "DGL"
 }

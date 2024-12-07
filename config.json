@@ -1,7 +1,7 @@
 {
   "name": "Kocom Wallpad with RS485 DGL",
   "version": "2022.07.17",
-  "slug": "kocom2_py",
+  "slug": "kocom_py",
   "description": "Kocom Wallpad for Home Assistant",
   "arch": [
     "armhf",

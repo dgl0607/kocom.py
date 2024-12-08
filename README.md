@@ -17,7 +17,7 @@ Kocom Wallpad with RS485
 8. "START" 버튼으로 애드온을 실행합니다.
 
 만일 kocom.py 파일을 수정하시려면 한번 실행한 후 애드온을 Stop 하시고
-share/kocom/ 폴더에 있는 파일을 알맞게 수정하신 다음에
+share/kocom2/ 폴더에 있는 파일을 알맞게 수정하신 다음에
 애드온을 Start 하시면 이후부터는 수정된 파일을 적용합니다.
 
 ## Change log

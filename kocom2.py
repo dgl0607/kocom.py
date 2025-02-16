@@ -721,15 +721,7 @@ def listen_hexdata():
             if p_ret['dest_h'] == wait_target.queue[0]:
                 # 일반적인 ACK 패킷 처리
                 if p_ret['type'] == 'ack':
-                    logging.info("[ACK] OK")  # 정상적인 ACK 확인 로그
-                    ack_q.put(d)
-                    time.sleep(0.5)
-                    wait_q.put(p_ret)
-                    continue
-                
-                # Thermo 장치에서 30de 패킷이 오면 ACK로 처리
-                elif p_ret['type'] == '30de':
-                    logging.info("[ACK] OK (Thermo)")  # Thermo 장치 ACK 확인 로그
+                    logging.info("[ACK] OK")
                     ack_q.put(d)
                     time.sleep(0.5)
                     wait_q.put(p_ret)

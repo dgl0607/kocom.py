@@ -717,15 +717,32 @@ def listen_hexdata():
             ack_q.put(d)
             continue
 
-        if wait_target.empty() == False:
-            if p_ret['dest_h'] == wait_target.queue[0] and p_ret['type'] == 'ack':
-            #if p_ret['src_h'] == wait_target.queue[0] and p_ret['type'] == 'send':
-                if len(ack_data) != 0:
-                    logging.info("[ACK] No ack received, but responce packet received before ACK. Assuming ACK OK")
+        if not wait_target.empty():
+            if p_ret['dest_h'] == wait_target.queue[0]:
+                # 일반적인 ACK 패킷 처리
+                if p_ret['type'] == 'ack':
+                    logging.info("[ACK] OK")  # 정상적인 ACK 확인 로그
                     ack_q.put(d)
                     time.sleep(0.5)
-                wait_q.put(p_ret)
-                continue
+                    wait_q.put(p_ret)
+                    continue
+                
+                # Thermo 장치에서 30de 패킷이 오면 ACK로 처리
+                elif p_ret['type'] == '30de':
+                    logging.info("[ACK] OK (Thermo)")  # Thermo 장치 ACK 확인 로그
+                    ack_q.put(d)
+                    time.sleep(0.5)
+                    wait_q.put(p_ret)
+                    continue
+                
+                # ACK 없이 응답 패킷만 먼저 도착한 경우
+                elif len(ack_data) != 0:
+                    logging.info("[ACK] No ack received, but response packet received before ACK. Assuming ACK OK")
+                    ack_q.put(d)
+                    time.sleep(0.5)
+                    wait_q.put(p_ret)
+                    continue
+
         publish_status(p_ret)
 
 
